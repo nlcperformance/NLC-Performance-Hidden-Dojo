@@ -114,15 +114,31 @@
             visibility: visible;
         }
 
+        .main-logo {
+            display: block;
+            margin: 0 auto 20px auto;
+            max-width: 180px; /* Adjust this to size the GIF perfectly */
+        }
+
         .brand-logo {
             font-size: 2.2rem;
             margin-top: 0;
             margin-bottom: 0.2em;
             letter-spacing: 1px;
+            text-align: center;
         }
 
         .brand-logo .text-white { font-weight: 800; }
         .brand-logo .text-orange { font-weight: 300; }
+
+        .subtitle {
+            font-style: italic;
+            color: var(--text-muted);
+            margin-bottom: 50px;
+            font-size: 1.1rem;
+            font-weight: 300;
+            text-align: center;
+        }
 
         h2 {
             letter-spacing: 2px;
@@ -135,14 +151,6 @@
         h3 {
             letter-spacing: 1px;
             font-weight: 600;
-        }
-
-        .subtitle {
-            font-style: italic;
-            color: var(--text-muted);
-            margin-bottom: 50px;
-            font-size: 1.1rem;
-            font-weight: 300;
         }
 
         p {
@@ -330,23 +338,32 @@
     <!-- THE DOJO (MAIN CONTENT) -->
     <div id="main-content">
         
+        <!-- Animated Transparent Logo -->
+        <img src="NLCP Logo TRANSPARENT.gif" alt="NLC Performance Logo" class="main-logo">
+        
         <h1 class="brand-logo"><span class="text-white">NLC</span> <span class="text-orange">PERFORMANCE</span></h1>
         <div class="subtitle">Adapt. Recover. Master.</div>
 
-        <h2>The Ethos</h2>
-        <p>NLC Performance operates as a private coaching practice for combat athletes (BJJ, MMA, Rugby) and high-stress professionals. You are here because you demand an elite standard from yourself, but you are hovering on the edge of burnout—or crawling back from it.</p>
-        <p>I am detail-oriented, and if I spread myself too thin, the product you will get will diminish. High quality and bespoke plans only.</p>
-        <p>Most driven individuals train like professionals but treat recovery as an afterthought. <strong>Recovery causes Adaptation.</strong> You cannot out-train a fried central nervous system. We track the 23 hours outside the gym using the Everfit app—prioritizing CO2 tolerance, grip strength readiness, and sleep hygiene before we ever lift a kettlebell. I utilize the world-renowned methodologies of <strong>StrongFirst</strong> (certifying SFG1 in October) to ensure our physical training is built on unbreakable, battle-tested principles.</p>
-        <p>I cap my active roster at 5 athletes at a time. The goal is not to keep you on a subscription forever; the goal is to teach you how to manage your own physical and mental load until you outgrow the dojo.</p>
+        <!-- 1. HOW TO APPLY (Moved to the Top) -->
+        <div class="apply-box" style="margin-top: 40px;">
+            <h2>How to Apply</h2>
+            <p>I do not take on every athlete who asks. If you want to ensure you thrive daily and make sure you are not running the risk of burnout, get in touch.</p>
+            
+            <div class="contact-links">
+                <a href="mailto:neil@nlcperformance.com" class="btn">Email: neil@nlcperformance.com</a>
+                <a href="https://www.linkedin.com/in/neil-lester-card-nlcperformance" target="_blank" class="btn">Connect on LinkedIn</a>
+            </div>
+        </div>
 
         <hr>
 
+        <!-- 2. THE STANDARDS -->
         <h2>The Standards</h2>
 
         <div class="package">
             <h3>1. The Performance Audit (Entry Point)</h3>
             <div class="price">£120</div>
-            <p><em>A 60-90 minute face-to-face deep dive in Sussex. <br>(Note: All monthly athletes must pass an Audit first).</em></p>
+            <p><em>A 60-90 minute face-to-face deep dive in Sussex.<br>(Note: All monthly athletes must pass an Audit first).</em></p>
             <ul>
                 <li><strong>Objective:</strong> Autonomic nervous system baseline testing (CO2 Apnea & Grip Dynamometer).</li>
                 <li><strong>Movement:</strong> Joint load tolerance and energy leak assessment for contact sports.</li>
@@ -360,12 +377,21 @@
             <p><em>Remote programming and daily load management via the NLC custom Everfit app.</em></p>
             <ul>
                 <li><strong>£75/month (The Recover Protocol):</strong> Bespoke Strength & Conditioning, daily habit tracking, CNS monitoring, and load-management adjustments to overlay your current sport/training.</li>
-                <li><strong>£150/month (The Full Arsenal - coming 2027):</strong> Complete bespoke programming, daily CNS tracking, direct coach access, macro/lifestyle interventions, and weekly 1-to-1s.</li>
+                <li><strong>£150/month (The Full Arsenal - coming 2027):</strong> Complete bespoke Strength & Conditioning programming, daily CNS tracking, direct coach access, macro/lifestyle interventions, and weekly 1-to-1s.</li>
             </ul>
         </div>
 
         <hr>
 
+        <!-- 3. THE ETHOS (Shortened and Relocated) -->
+        <h2>The Ethos</h2>
+        <p>NLC Performance is a private coaching practice for contact athletes (Rugby, BJJ, MMA) and high-stress professionals, not a mass-market program. I offer high-quality, bespoke plans.</p>
+        <p>Adaptation is driven by recovery, not just training. We track the 23 hours outside the gym using the Everfit app — focusing on CO2 tolerance, grip strength readiness, and sleep hygiene — before any physical training.</p>
+        <p>I cap my roster at 5 athletes. The goal is to equip you with the knowledge to manage your own physical load, not to keep you on a perpetual subscription.</p>
+
+        <hr>
+
+        <!-- 4. THE ARSENAL -->
         <h2>The Arsenal (Athlete Perks)</h2>
         <p>NLC Performance athletes get access to the tools I personally use and trust for recovery. Use the codes below to support the standard.</p>
         
@@ -387,18 +413,6 @@
             <h4>Internal Tools</h4>
             <p style="font-size: 0.9rem; margin-top: 10px;">The NLC Quick & The Dead Protocol Timer</p>
             <a href="https://nlcperformance.github.io/NLC-Performance-Timer/" target="_blank" class="btn">Access Timer</a>
-        </div>
-
-        <hr>
-
-        <div class="apply-box">
-            <h2>How to Apply</h2>
-            <p>I do not take on every athlete who asks. If you want to reclaim your elite performance without sacrificing your nervous system, get in touch.</p>
-            
-            <div class="contact-links">
-                <a href="mailto:neil@nlcperformance.com" class="btn">Email: neil@nlcperformance.com</a>
-                <a href="https://www.linkedin.com/in/neil-lester-card-nlcperformance" target="_blank" class="btn">Connect on LinkedIn</a>
-            </div>
         </div>
 
     </div>
