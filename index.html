@@ -14,11 +14,11 @@
         /* --- BRAND VARIABLES --- */
         :root {
             --bg-base: #050505; /* Pitch black */
-            --bg-surface: #111111; /* Slightly elevated dark */
+            --bg-surface: rgba(20, 20, 20, 0.65); /* Glassy dark surface */
             --text-main: #f0f0f0; /* Crisp white */
             --text-muted: #a0a0a0; /* Lighter grey for better readability */
             --accent: #ff6300; /* The vibrant NLC Orange */
-            --border-subtle: #222222;
+            --border-subtle: rgba(255, 255, 255, 0.08); /* Faint white border for glass edge */
         }
 
         * {
@@ -29,11 +29,13 @@
 
         body {
             background-color: var(--bg-base);
+            /* The Gritty Texture is now on the whole background */
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.06'/%3E%3C/svg%3E");
             color: var(--text-main);
             font-family: 'Inter', sans-serif;
             line-height: 1.7;
             overflow-x: hidden;
-            -webkit-font-smoothing: antialiased; /* Makes fonts look sharper on Mac/iOS */
+            -webkit-font-smoothing: antialiased; 
         }
 
         /* --- TYPOGRAPHY UPGRADES --- */
@@ -53,6 +55,7 @@
             width: 100vw;
             height: 100vh;
             background-color: var(--bg-base);
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.06'/%3E%3C/svg%3E");
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -79,7 +82,9 @@
 
         .enter-btn {
             font-family: 'Montserrat', sans-serif;
-            background: transparent;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
             color: var(--text-main);
             border: 1px solid var(--text-muted);
             padding: 15px 40px;
@@ -116,8 +121,8 @@
 
         .main-logo {
             display: block;
-            margin: 0 auto 20px auto;
-            max-width: 180px; /* Adjust this to size the GIF perfectly */
+            margin: 0 auto 40px auto;
+            max-width: 220px; /* Slightly larger since it sits alone at the top */
         }
 
         .brand-logo {
@@ -134,10 +139,10 @@
         .subtitle {
             font-style: italic;
             color: var(--text-muted);
-            margin-bottom: 50px;
             font-size: 1.1rem;
             font-weight: 300;
             text-align: center;
+            letter-spacing: 1px;
         }
 
         h2 {
@@ -165,18 +170,19 @@
             font-weight: 600;
         }
 
-        /* --- TEXTURED BOXES (The "Cast Iron" Feel) --- */
+        /* --- GLASSMORPHISM BOXES --- */
         .package, .code-box, .apply-box {
-            background-color: var(--bg-surface);
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
+            background: var(--bg-surface);
+            backdrop-filter: blur(12px); /* Creates the frosted glass effect */
+            -webkit-backdrop-filter: blur(12px);
             border: 1px solid var(--border-subtle);
-            border-radius: 6px;
-            box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 8px 20px rgba(0,0,0,0.6);
+            border-radius: 8px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6); /* Deep shadow to lift off the gritty background */
         }
 
         /* Package Cards */
         .package {
-            border-left: 3px solid var(--accent);
+            border-left: 3px solid var(--accent); /* Retain the strong orange edge */
             padding: 30px;
             margin-bottom: 30px;
         }
@@ -251,7 +257,7 @@
 
         .promo-code {
             display: inline-block;
-            background-color: #000;
+            background-color: rgba(0, 0, 0, 0.5); /* Darker inset for the code */
             color: var(--accent);
             padding: 8px 15px;
             font-family: monospace;
@@ -301,7 +307,7 @@
         hr {
             border: 0;
             height: 1px;
-            background: var(--border-subtle);
+            background: rgba(255, 255, 255, 0.1);
             margin: 60px 0;
         }
 
@@ -341,10 +347,8 @@
         <!-- Animated Transparent Logo -->
         <img src="nlcp-logo.gif" alt="NLC Performance Logo" class="main-logo">
         
-        <div class="subtitle">Adapt. Recover. Master.</div>
-
-        <!-- 1. HOW TO APPLY (Moved to the Top) -->
-        <div class="apply-box" style="margin-top: 40px;">
+        <!-- 1. HOW TO APPLY (At the Top) -->
+        <div class="apply-box">
             <h2>How to Apply</h2>
             <p>I do not take on every athlete who asks. If you want to ensure you thrive daily and make sure you are not running the risk of burnout, get in touch.</p>
             
@@ -382,7 +386,7 @@
 
         <hr>
 
-        <!-- 3. THE ETHOS (Shortened and Relocated) -->
+        <!-- 3. THE ETHOS -->
         <h2>The Ethos</h2>
         <p>NLC Performance is a private coaching practice for contact athletes (Rugby, BJJ, MMA) and high-stress professionals, not a mass-market program. I offer high-quality, bespoke plans.</p>
         <p>Adaptation is driven by recovery, not just training. We track the 23 hours outside the gym using the Everfit app — focusing on CO2 tolerance, grip strength readiness, and sleep hygiene — before any physical training.</p>
@@ -398,18 +402,25 @@
             <div class="code-box">
                 <h4>Awesome Supplements</h4>
                 <div class="promo-code">LESTERCARD10</div><br>
-        <div class="apply-box" style="margin-top: 40px;">
-            <h2>How to Apply</h2>
-            <p>I do not take on every athlete who asks. If you want to ensure you thrive daily and make sure you are not running the risk of burnout, get in touch.</p>
-            
-            <div class="contact-links">
-                <a href="mailto:neil@nlcperformance.com" class="btn">Email: neil@nlcperformance.com</a>
-                <a href="https://www.linkedin.com/in/neil-lester-card-nlcperformance" target="_blank" class="btn">Connect on LinkedIn</a>
+                <a href="https://awesomesupplements.co.uk/?ref=NLCPerformance&utm_campaign=affiliate_promotion&utm_medium=affiliate&utm_source=gapaffiliate" target="_blank" class="btn">Shop Awesome</a>
+            </div>
+
+            <div class="code-box">
+                <h4>Vivobarefoot</h4>
+                <div class="promo-code">NEILLESTERCARD25</div><br>
+                <a href="https://glnk.io/3xyx1/neil" target="_blank" class="btn">Shop Vivo</a>
             </div>
         </div>
 
+        <div class="code-box" style="margin-top: 20px;">
+            <h4>Internal Tools</h4>
+            <p style="font-size: 0.9rem; margin-top: 10px;">The NLC Quick & The Dead Protocol Timer</p>
+            <a href="https://nlcperformance.github.io/NLC-Performance-Timer/" target="_blank" class="btn">Access Timer</a>
+        </div>
+
         <!-- FOOTER SIGNATURE -->
-        <div style="text-align: center; margin-top: 80px; padding-bottom: 20px;">
+        <div style="text-align: center; margin-top: 100px; padding-bottom: 20px;">
+            <div class="subtitle" style="margin-bottom: 20px;">Adapt. Recover. Master.</div>
             <h1 class="brand-logo" style="font-size: 1.5rem; margin-top: 0;"><span class="text-white">NLC</span> <span class="text-orange">PERFORMANCE</span></h1>
             <p style="font-size: 0.85rem; color: var(--text-muted);">&copy; 2026 NLC Performance</p>
         </div>
