@@ -11,7 +11,7 @@
             --bg-surface: #111111; /* Slightly elevated dark */
             --text-main: #f0f0f0; /* Crisp white */
             --text-muted: #888888; /* Grey for paragraphs */
-            --accent: #d45d2a; /* Burnt orange from your banner */
+            --accent: #ff6300; /* The new vibrant NLC Orange */
             --border-subtle: #222222;
         }
 
@@ -56,6 +56,7 @@
 
         .splash-title span {
             font-weight: 700;
+            color: var(--accent);
         }
 
         .enter-btn {
@@ -74,8 +75,9 @@
         .enter-btn:hover {
             border-color: var(--accent);
             background-color: var(--accent);
-            color: #fff;
-            box-shadow: 0 0 20px rgba(212, 93, 42, 0.2);
+            color: #000;
+            box-shadow: 0 0 20px rgba(255, 99, 0, 0.3);
+            font-weight: bold;
         }
 
         /* --- MAIN CONTENT (THE DOJO) --- */
@@ -88,7 +90,6 @@
             transition: opacity 1.5s ease-in-out;
         }
 
-        /* When JS adds this class, the content fades in */
         #main-content.visible {
             opacity: 1;
             visibility: visible;
@@ -126,14 +127,21 @@
             color: var(--text-main);
         }
 
+        /* --- TEXTURED BOXES (The "Cast Iron" Feel) --- */
+        /* SVG Noise filter creates a tactile, gritty look */
+        .package, .code-box, .apply-box {
+            background-color: var(--bg-surface);
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
+            border: 1px solid var(--border-subtle);
+            border-radius: 6px;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 8px 20px rgba(0,0,0,0.6);
+        }
+
         /* Package Cards */
         .package {
-            background-color: var(--bg-surface);
-            border: 1px solid var(--border-subtle);
             border-left: 3px solid var(--accent);
             padding: 30px;
             margin-bottom: 30px;
-            border-radius: 6px;
         }
 
         .package h3 {
@@ -147,6 +155,7 @@
             color: var(--accent);
             font-size: 1.2rem;
             margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(255, 99, 0, 0.2);
         }
 
         .package p {
@@ -189,11 +198,8 @@
         }
 
         .code-box {
-            background-color: var(--bg-surface);
-            border: 1px solid var(--border-subtle);
             padding: 20px;
             text-align: center;
-            border-radius: 6px;
         }
 
         .code-box h4 {
@@ -205,7 +211,7 @@
 
         .promo-code {
             display: inline-block;
-            background-color: #2a2a2a;
+            background-color: #000;
             color: var(--accent);
             padding: 8px 15px;
             font-family: monospace;
@@ -214,6 +220,7 @@
             border-radius: 4px;
             margin: 10px 0;
             border: 1px dashed var(--accent);
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.8);
         }
 
         /* Links & Buttons */
@@ -237,10 +244,15 @@
             letter-spacing: 1px;
             border-radius: 50px;
             margin-top: 10px;
+            background: rgba(255, 99, 0, 0.05);
+            transition: all 0.3s ease;
         }
 
         .btn:hover {
             background-color: var(--accent);
+            color: #000;
+            font-weight: bold;
+            box-shadow: 0 0 15px rgba(255, 99, 0, 0.4);
         }
 
         hr {
@@ -252,11 +264,8 @@
 
         /* Apply Section */
         .apply-box {
-            border: 1px solid var(--border-subtle);
             padding: 30px;
             text-align: center;
-            border-radius: 6px;
-            background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-base) 100%);
         }
 
         .contact-links {
@@ -286,16 +295,13 @@
     <!-- THE DOJO (MAIN CONTENT) -->
     <div id="main-content">
         
-        <!-- Optional: You can put an <img> tag here for your actual logo if you upload it to GitHub -->
-
         <h1>NLC Performance</h1>
         <div class="subtitle">Adapt. Recover. Master.</div>
 
         <h2>The Ethos</h2>
-        <p>NLC Performance is not a mass-market fitness program. It operates as a private coaching practice for contact athletes (Rugby, BJJ, MMA) and high-stress professionals.</p>
-        <p>I am detail-oriented, and if I spread myself too thin, the product you will get will diminish. High quality and bespoke plans only.</p>
-        <p>Most athletes train like professionals but treat recovery as an afterthought. <strong>Recovery causes Adaptation!</strong> You cannot out-train a fried central nervous system. We track the 23 hours outside the gym using the Everfit app—prioritizing CO2 tolerance, grip strength readiness, and sleep hygiene before we ever lift a kettlebell.</p>
-        <p>I cap my roster at 5 athletes at a time. The goal is not to keep you on a subscription forever; the goal is to teach you how to manage your own physical load until you outgrow the dojo.</p>
+        <p>NLC Performance operates as a private coaching practice for combat athletes (BJJ, MMA, Rugby) and high-stress professionals. You are here because you demand an elite standard from yourself, but you are hovering on the edge of burnout—or crawling back from it.</p>
+        <p>Most driven individuals train like professionals but treat recovery as an afterthought. <strong>Recovery causes Adaptation.</strong> You cannot out-train a fried central nervous system. We track the 23 hours outside the gym using the Everfit app—prioritizing CO2 tolerance, grip strength readiness, and sleep hygiene before we ever lift a kettlebell.</p>
+        <p>I cap my active roster at 5 athletes at a time. The goal is not to keep you on a subscription forever; the goal is to teach you how to manage your own physical load until you outgrow the dojo.</p>
 
         <hr>
 
@@ -313,12 +319,12 @@
         </div>
 
         <div class="package">
-            <h3>2. The Dojo (Monthly Apprenticeship)</h3>
+            <h3>2. The Dojo (Ongoing Mastery)</h3>
             <div class="price">£75 / £150 per month</div>
             <p><em>Remote programming and daily load management via the NLC custom Everfit app.</em></p>
             <ul>
                 <li><strong>£75/month (The Recover Protocol):</strong> Bespoke Strength & Conditioning, daily habit tracking, CNS monitoring, and load-management adjustments to overlay your current sport/training.</li>
-                <li><strong>£150/month (The Full Arsenal - coming 2027):</strong> Complete bespoke Strength & Conditioning programming, daily CNS tracking, direct coach access, macro/lifestyle interventions, and weekly 1-to-1s.</li>
+                <li><strong>£150/month (The Full Arsenal - coming 2027):</strong> Complete bespoke programming, daily CNS tracking, direct coach access, macro/lifestyle interventions, and weekly 1-to-1s.</li>
             </ul>
         </div>
 
@@ -351,7 +357,7 @@
 
         <div class="apply-box">
             <h2>How to Apply</h2>
-            <p>I do not take on every athlete who asks. If you want to ensure you thrive daily and make sure you are not running the risk of burnout, get in touch.</p>
+            <p>I do not take on every athlete who asks. If you want to reclaim your elite performance without sacrificing your nervous system, get in touch.</p>
             
             <div class="contact-links">
                 <a href="mailto:neil@nlcperformance.com" class="btn">Email: neil@nlcperformance.com</a>
@@ -367,16 +373,13 @@
             const splash = document.getElementById('splash-screen');
             const mainContent = document.getElementById('main-content');
             
-            // Fade out the splash screen
             splash.style.opacity = '0';
             
-            // Wait for fade to finish, then hide splash entirely and show main content
             setTimeout(() => {
                 splash.style.display = 'none';
                 mainContent.classList.add('visible');
-                // Scroll to top just in case
                 window.scrollTo(0,0);
-            }, 1000); // Matches the 1s CSS transition
+            }, 1000); 
         }
     </script>
 </body>
